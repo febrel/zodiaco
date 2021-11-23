@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+
+
+{% block header %}
+
+{% with messages= get_flashed_messages() %}
+{% if messages %}
+{% for men in messages %}
+
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <strong>{{messages}}</strong> 
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+{% endfor %}
+{% endif %}
+{% endwith%}
+
+{% endblock%}
+
+
+{% block content %}
+
+    <div class="container">
+        <div class="myCard">
+          <div class="row">
+   
+            <div class="col-md-6">
+              <div class="myLeftCtn">
+   
+               <form class="myForm text-center"  method="post">
+                 <header>Fecha de Nacimiento</header>
+   
+                 <div class="form-group">
+                    <select class="myInput" name="yearInput" id="yearInput">
+                        <option value="">Seleccione</option>
+                    </select>
+                 </div>
+   
+                 <div class="form-group">
+                    <select class="myInput" name="monthInput" id="monthInput">
+                        <option value="">Seleccione</option>
+                    </select>
+                 </div>
+   
+                 <div class="form-group">
+                    <select class="myInput" name="dayInput" id="dayInput">
+                        <option value="">Seleccione</option>
+                    </select>
+                 </div>
+   
+                 <div class="form-group">
+                   <label>
+                     
+                     <small>Ingrese todos los valores!</small>
+                     
+                   </label>
+                 </div>
+   
+                 <input type="submit" class="butt" value="Enviar">
+   
+               </form>
+              </div>
+            </div>
+   
+            
+            <div class="col-md-6">
+              <div class="myRightCtn">
+                <div class="box">
+                  <header>Zodiaco Generador</header>
+                  <p class="text-white">Proyecto que mediante los datos requeridos calcula: El Zodiaco y la Edad que tienen hasta la fecha, creado con tecnologias como Python (Flask), Javascript, Bootstrap 4 y HTML</p>
+                  <hr>
+
+                  <p class="text-white"> <strong>Copyright &copy; 2021</strong> Desarrollador: <em> Luis Febre Paucar </em> </p>
+                
+                  <a href="https://github.com/febrel" class="butt_out" role="button" style="text-decoration:none">Github</a>
+                
+                
+                  
+                  
+                   
+                 
+       
+                
+                </div>
+   
+              </div>
+            </div>
+   
+            
+          </div>
+        </div>
+      </div>
+
+    
+
+
+
+{% endblock %}

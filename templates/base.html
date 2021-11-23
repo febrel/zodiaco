@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet"  href="{{url_for('static', filename='css/styles.css')}}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/lib/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+
+    <!-- Bootstrap JS -->
+    <script src="{{url_for('static', filename='js/lib/jquery-3.4.1.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/lib/popper.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/lib/bootstrap.min.js')}}"></script>
+
+    <title>Zodiaco</title>
+  </head>
+
+  <body class="content">
+
+    <header>
+      {% block header %} {% endblock %}
+    </header>
+
+    {% block content %}
+
+
+    {% endblock %}
+    
+
+  </body>
+
+  <script src="{{url_for('static', filename='js/app.js')}}"></script>
+
+</html>

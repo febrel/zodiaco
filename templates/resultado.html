@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+{% for fila in resultado %}
+
+<div class="container">
+    <div class="myCard">
+      <div class="row">
+
+        <div class="col-md-6">
+            <div class="myRightCtn">
+              <div class="box">
+                <header>{{fila['zodiaco']}}</header>
+                <p class="text-white">La descripcion de tu Zodiaco es la siguiente: </p>
+               <a href="{{url_for('index')}}" class="butt_out" role="button" style="text-decoration:none">Volver atras</a>
+              </div>
+  
+            </div>
+          </div>
+
+
+        <div class="col-md-6">
+          <div class="myLeftCtn">
+
+           <div class="myForm text-center"  method="post">
+             
+            <p class="text-justify"> {{fila['descripcion']}} </p>
+
+           </div>
+
+           <header>Cálculo Edad Actual</header>
+           
+           <b> <i> {{fila['year']}} Años </i> </b>
+           <br>
+           <b> <i> {{fila['month']}} Meses </i> </b>
+           <br>
+           <b> <i> {{fila['day']}} Dias </i> </b>
+
+
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  {% endfor %}
+
+
+{% endblock %}

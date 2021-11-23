@@ -98,6 +98,8 @@ def retornaMesEntero(mes):
     return resultado_clave
 
 def retornaEdad(year_html, month_html, day_html):
+    
+    diasMeses = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
     # Variables que retornan el resultado
     yearsOutput = 0;
@@ -137,7 +139,6 @@ def retornaEdad(year_html, month_html, day_html):
     elif ((year_html < yearMax) and (month_html == months) and (day_html > day)):
         yearsOutput = (yearMax - year_html) - 1;
         monthsOutput = 12 - 1;
-        console.log(diasMeses[months]);
         daysOutput = diasMeses[months] - (day_html - day);
 
     # Si year es menor al actual y mes es mayor al mes actual y dias menor al actual
@@ -215,6 +216,8 @@ def index():
 
             resultado_anios, resultado_meses, resultado_dias= retornaEdad(int(year_html), mes_trasformado, int(day_html))
 
+
+            print('Miraaaaaa:',resultado_anios, resultado_meses, resultado_dias)
 
             resultado = [
                 {

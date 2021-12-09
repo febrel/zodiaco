@@ -14,6 +14,8 @@ yearMax =  hoy[0]
 months=  hoy[1]
 day = hoy.tm_mday
 
+print('Aquiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii: ',months)
+
 
 # Funciones de Flask (Rutas)
 def retornaZodiaco(dia, mes):
@@ -102,91 +104,120 @@ def retornaEdad(year_html, month_html, day_html):
     diasMeses = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
     # Variables que retornan el resultado
-    yearsOutput = 0;
-    monthsOutput = 0;
-    daysOutput = 0;
+    yearsOutput = 0
+    monthsOutput = 0
+    daysOutput = 0
 
     # Si year es menor al actual y mes es menor al mes actual y dias menos que el actual
     if ((year_html < yearMax) and (month_html < months) and (day_html < day)):
-        yearsOutput = yearMax - year_html;
-        monthsOutput = months - month_html;
-        daysOutput = day - day_html;
+        print('Aqui 1')
+        yearsOutput = yearMax - year_html
+        monthsOutput = months - month_html
+        daysOutput = day - day_html
+        
     # Si year es menor al actual y mes es menor al mes actual y dias igual que el actual
     elif ((year_html < yearMax) and (month_html < months) and (day_html == day)):
-        yearsOutput = yearMax - year_html;
-        monthsOutput = months - month_html;
-        daysOutput = 0;
+        print('Aqui 2')
+        yearsOutput = yearMax - year_html
+        monthsOutput = months - month_html
+        daysOutput = 0
+        
 
     # Si year es menor al actual y mes es menor al mes actual y dias mayor que el actual
     elif ((year_html < yearMax) and (month_html < months) and (day_html > day)):
-        yearsOutput = yearMax - year_html;
-        monthsOutput = (months - month_html) - 1;
-        daysOutput = diasMeses[months] - (day_html - day);
+        print('Aqui 3')
+        yearsOutput = yearMax - year_html
+        monthsOutput = (months - month_html) - 1
+        daysOutput = diasMeses[months -1] - (day_html - day)
+        
 
     # Si year es menor al actual y mes es menor al mes actual y dias mayor que el actual
     elif ((year_html < yearMax) and (month_html == months) and (day_html == day)):
-        yearsOutput = yearMax - year_html;
-        monthsOutput = 0;
-        daysOutput = 0;
+        print('Aqui 4')
+        yearsOutput = yearMax - year_html
+        monthsOutput = 0
+        daysOutput = 0
+        
 
     # Si year es menor al actual y mes es igual al mes actual y dias menor al actual
     elif ((year_html < yearMax) and (month_html == months) and (day_html < day)):
-        yearsOutput = (yearMax - year_html);
-        monthsOutput = 0;
-        daysOutput = day - day_html;
+        print('Aqui 5')
+        yearsOutput = (yearMax - year_html)
+        monthsOutput = 0
+        daysOutput = day - day_html
+        
 
     # Si year es menor al actual y mes es igual al mes actual y dias mayor al actual
     elif ((year_html < yearMax) and (month_html == months) and (day_html > day)):
-        yearsOutput = (yearMax - year_html) - 1;
-        monthsOutput = 12 - 1;
-        daysOutput = diasMeses[months] - (day_html - day);
+        print('Aqui 6')
+        yearsOutput = (yearMax - year_html) - 1
+        monthsOutput = 12 - 1
+        daysOutput = diasMeses[months - 1] - (day_html - day)
+        
 
     # Si year es menor al actual y mes es mayor al mes actual y dias menor al actual
     elif ((year_html < yearMax) and (month_html > months) and (day_html < day)):
-        yearsOutput = (yearMax - year_html) - 1;
-        monthsOutput = (12 - (month_html - months));
-        daysOutput = day - day_html;
+        print('Aqui 7')
+        yearsOutput = (yearMax - year_html) - 1
+        monthsOutput = (12 - (month_html - months))
+        daysOutput = day - day_html
+        
 
     # Si year es igual al actual y mes es mayor al actual y dia es igual al actual
     elif ((year_html < yearMax) and (month_html > months) and (day_html == day)):
-        yearsOutput = (yearMax - year_html) - 1;
-        monthsOutput = (12 - (month_html - months));
-        daysOutput = 0;
+        print('Aqui 8')
+        yearsOutput = (yearMax - year_html) - 1
+        monthsOutput = (12 - (month_html - months))
+        daysOutput = 0
+        
 
     # Si year es igual al actual y mes es mayor al actual y dia es mayor al actual
     elif ((year_html < yearMax) and (month_html > months) and (day_html > day)):
-        yearsOutput = (yearMax - year_html) - 1;
-        monthsOutput = (12 - (month_html - months) - 1);
-        daysOutput = diasMeses[months] - (day_html - day);
+        print('Aqui 9')
+        yearsOutput = (yearMax - year_html) - 1
+        monthsOutput = (12 - (month_html - months) - 1)
+        daysOutput = diasMeses[months - 1] - (day_html - day)
+        
     
     # Si year es mayor o igual al actual y mes es menor al actual 
     elif ((year_html >= yearMax) and (month_html < months) and (day_html < day)):
-        yearsOutput = 0;
-        monthsOutput = months - month_html;
-        daysOutput = day - day_html;
+        print('Aqui 10')
+        yearsOutput = 0
+        monthsOutput = months - month_html
+        daysOutput = day - day_html
+        
 
     # Si year es mayor o igual al actual y mes es menor al actual  y dia es igual al actual
     elif ((year_html >= yearMax) and (month_html < months) and (day_html == day)):
-        yearsOutput = 0;
-        monthsOutput = months - month_html;
+        print('Aqui 11')
+        yearsOutput = 0
+        monthsOutput = months - month_html
         daysOutput = 0;
+        
 
     # Si year es mayor o igual al actual y mes es menor al actual  y dia es mayor al actual
     elif ((year_html >= yearMax) and (month_html < months) and (day_html > day)):
-        yearsOutput = 0;
-        monthsOutput = (months - month_html) - 1;
-        daysOutput = diasMeses[months] - (day_html - day);
+        print('Aqui 12')
+        yearsOutput = 0
+        monthsOutput = (months - month_html) - 1
+        daysOutput = diasMeses[months - 1] - (day_html - day)
+        
 
     # Si year es igual al actual y dia es igual al actual
     elif ((year_html >= yearMax) and (month_html == months) and (day_html == day)):
-        yearsOutput = 0;
-        monthsOutput = 0;
-        daysOutput = 0;
+        print('Aqui 13')
+        yearsOutput = 0
+        monthsOutput = 0
+        daysOutput = 0
+        
+
     # Si year es igual al actual y dia es igual al actual
     elif ((year_html >= yearMax) and (month_html == months) and (day_html < day)):
-        yearsOutput = 0;
-        monthsOutput = 0;
-        daysOutput = day - day_html;
+        print('Aqui 14')
+        yearsOutput = 0
+        monthsOutput = 0
+        daysOutput = day - day_html
+        
 
     else:
         print("Ninguno")
@@ -211,13 +242,9 @@ def index():
         else:
             resultado_zodiaco = retornaZodiaco(int(day_html), month_html)
             resultado_descrip = retornaDescripcion(resultado_zodiaco)
-
             mes_trasformado = retornaMesEntero(month_html)
 
-            resultado_anios, resultado_meses, resultado_dias= retornaEdad(int(year_html), mes_trasformado, int(day_html))
-
-
-            print('Miraaaaaa:',resultado_anios, resultado_meses, resultado_dias)
+            resultado_anios, resultado_meses, resultado_dias = retornaEdad(int(year_html), mes_trasformado, int(day_html))
 
             resultado = [
                 {

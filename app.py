@@ -14,7 +14,6 @@ yearMax =  hoy[0]
 months=  hoy[1]
 day = hoy.tm_mday
 
-print('Aquiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii: ',months)
 
 
 # Funciones de Flask (Rutas)
@@ -110,14 +109,12 @@ def retornaEdad(year_html, month_html, day_html):
 
     # Si year es menor al actual y mes es menor al mes actual y dias menos que el actual
     if ((year_html < yearMax) and (month_html < months) and (day_html < day)):
-        print('Aqui 1')
         yearsOutput = yearMax - year_html
         monthsOutput = months - month_html
         daysOutput = day - day_html
         
     # Si year es menor al actual y mes es menor al mes actual y dias igual que el actual
     elif ((year_html < yearMax) and (month_html < months) and (day_html == day)):
-        print('Aqui 2')
         yearsOutput = yearMax - year_html
         monthsOutput = months - month_html
         daysOutput = 0
@@ -125,7 +122,6 @@ def retornaEdad(year_html, month_html, day_html):
 
     # Si year es menor al actual y mes es menor al mes actual y dias mayor que el actual
     elif ((year_html < yearMax) and (month_html < months) and (day_html > day)):
-        print('Aqui 3')
         yearsOutput = yearMax - year_html
         monthsOutput = (months - month_html) - 1
         daysOutput = diasMeses[months -1] - (day_html - day)
@@ -133,7 +129,6 @@ def retornaEdad(year_html, month_html, day_html):
 
     # Si year es menor al actual y mes es menor al mes actual y dias mayor que el actual
     elif ((year_html < yearMax) and (month_html == months) and (day_html == day)):
-        print('Aqui 4')
         yearsOutput = yearMax - year_html
         monthsOutput = 0
         daysOutput = 0
@@ -141,7 +136,6 @@ def retornaEdad(year_html, month_html, day_html):
 
     # Si year es menor al actual y mes es igual al mes actual y dias menor al actual
     elif ((year_html < yearMax) and (month_html == months) and (day_html < day)):
-        print('Aqui 5')
         yearsOutput = (yearMax - year_html)
         monthsOutput = 0
         daysOutput = day - day_html
@@ -149,7 +143,6 @@ def retornaEdad(year_html, month_html, day_html):
 
     # Si year es menor al actual y mes es igual al mes actual y dias mayor al actual
     elif ((year_html < yearMax) and (month_html == months) and (day_html > day)):
-        print('Aqui 6')
         yearsOutput = (yearMax - year_html) - 1
         monthsOutput = 12 - 1
         daysOutput = diasMeses[months - 1] - (day_html - day)
@@ -157,7 +150,6 @@ def retornaEdad(year_html, month_html, day_html):
 
     # Si year es menor al actual y mes es mayor al mes actual y dias menor al actual
     elif ((year_html < yearMax) and (month_html > months) and (day_html < day)):
-        print('Aqui 7')
         yearsOutput = (yearMax - year_html) - 1
         monthsOutput = (12 - (month_html - months))
         daysOutput = day - day_html
@@ -165,7 +157,6 @@ def retornaEdad(year_html, month_html, day_html):
 
     # Si year es igual al actual y mes es mayor al actual y dia es igual al actual
     elif ((year_html < yearMax) and (month_html > months) and (day_html == day)):
-        print('Aqui 8')
         yearsOutput = (yearMax - year_html) - 1
         monthsOutput = (12 - (month_html - months))
         daysOutput = 0
@@ -173,7 +164,6 @@ def retornaEdad(year_html, month_html, day_html):
 
     # Si year es igual al actual y mes es mayor al actual y dia es mayor al actual
     elif ((year_html < yearMax) and (month_html > months) and (day_html > day)):
-        print('Aqui 9')
         yearsOutput = (yearMax - year_html) - 1
         monthsOutput = (12 - (month_html - months) - 1)
         daysOutput = diasMeses[months - 1] - (day_html - day)
@@ -181,7 +171,6 @@ def retornaEdad(year_html, month_html, day_html):
     
     # Si year es mayor o igual al actual y mes es menor al actual 
     elif ((year_html >= yearMax) and (month_html < months) and (day_html < day)):
-        print('Aqui 10')
         yearsOutput = 0
         monthsOutput = months - month_html
         daysOutput = day - day_html
@@ -189,7 +178,6 @@ def retornaEdad(year_html, month_html, day_html):
 
     # Si year es mayor o igual al actual y mes es menor al actual  y dia es igual al actual
     elif ((year_html >= yearMax) and (month_html < months) and (day_html == day)):
-        print('Aqui 11')
         yearsOutput = 0
         monthsOutput = months - month_html
         daysOutput = 0;
@@ -197,7 +185,6 @@ def retornaEdad(year_html, month_html, day_html):
 
     # Si year es mayor o igual al actual y mes es menor al actual  y dia es mayor al actual
     elif ((year_html >= yearMax) and (month_html < months) and (day_html > day)):
-        print('Aqui 12')
         yearsOutput = 0
         monthsOutput = (months - month_html) - 1
         daysOutput = diasMeses[months - 1] - (day_html - day)
@@ -205,7 +192,6 @@ def retornaEdad(year_html, month_html, day_html):
 
     # Si year es igual al actual y dia es igual al actual
     elif ((year_html >= yearMax) and (month_html == months) and (day_html == day)):
-        print('Aqui 13')
         yearsOutput = 0
         monthsOutput = 0
         daysOutput = 0
@@ -213,7 +199,6 @@ def retornaEdad(year_html, month_html, day_html):
 
     # Si year es igual al actual y dia es igual al actual
     elif ((year_html >= yearMax) and (month_html == months) and (day_html < day)):
-        print('Aqui 14')
         yearsOutput = 0
         monthsOutput = 0
         daysOutput = day - day_html
